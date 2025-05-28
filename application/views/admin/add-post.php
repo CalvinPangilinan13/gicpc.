@@ -72,6 +72,12 @@
                                             <label>Sub Category</label>
                                             <select class="form-control" name="subcategory" id="subcategory">
                                             <option value="NA">--select--</option>
+                                            <?php
+                                             foreach($viewdetails as $row)
+                                             {
+                                             echo '<option value="'.$row->id.'">'.$row->name.'</option>';
+                                             }
+                                             ?>
                                            </select>
                                          </div>
 

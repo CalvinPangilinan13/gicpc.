@@ -76,9 +76,15 @@
                                             <label>Sub Category</label>
                                             <select class="form-control" name="subcategory" id="subcategory" required>
                                             <?php
-                                             echo '<option value="'.$editdata->Sub_category.'">'.$editdata->subcategory.'</option>';
-                                            ?> 
-                                           </select>
+                                             echo '<option value="'.$editdata->subcat.'" select>'.$editdata->subcategory.'</option>';
+                                            ?>  
+                                              <?php
+                                             foreach($viewdetails as $row)
+                                             {
+                                             echo '<option value="'.$row->id.'">'.$row->name.'</option>';
+                                             }
+                                             ?>
+                                           </select>  
                                          </div>
 
 
