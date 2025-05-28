@@ -37,26 +37,36 @@ class Usercomment_model extends CI_Model
     }
     public function get_latest_postid()
     {
-        // Get the latest postid from the tblcomment table
-        $query = $this->db->select_max('postid')->get('tblcomment');
-        $result = $query->row();
-        return $result ? $result->postid : 0; // Return 0 if no records exist
+        $this->db->select_max('postid');
+        $query = $this->db->get('tblcomment'); // Replace with actual table name
+
+        if ($query->num_rows() > 0) {
+            $row = $query->row();
+            return (int) $row->postid;
+        }
+        return 0;
     }
 
-    public function commentsave($postid, $name, $email, $comment, $status)
+    public function commentsave($postid, $name, $emailid, $comment, $status)
     {
-        // Save the comment to the tblcomment table
         $data = [
             'postid' => $postid,
             'name' => $name,
-            'emailid' => $email,
+            'emailid' => $emailid, // must match DB column name exactly
             'comment' => $comment,
-            'status' => $status,
-            'create_date' => date('Y-m-d H:i:s') // Optional: Add a timestamp
+            'status' => $status
         ];
-        $this->db->insert('tblcomment', $data);
-    }
 
+        $insert = $this->db->insert('tblcomment', $data);
+
+        if (!$insert) {
+            log_message('error', 'Insert FAILED!');
+            log_message('error', 'SQL: ' . $this->db->last_query());
+            log_message('error', 'Error: ' . print_r($this->db->error(), true));
+        }
+
+        return $insert;
+    }
 
 }
 

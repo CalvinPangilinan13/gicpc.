@@ -67,25 +67,30 @@ class Welcome extends CI_Controller
 
 	public function comment()
 	{
-		if ($this->input->post('type') == 1) {
+		ini_set('display_errors', 1);
+		error_reporting(E_ALL);
+
+		if ($this->input->method() === 'post') {
 			$name = $this->input->post('name');
 			$email = $this->input->post('email');
 			$comment = $this->input->post('comment');
+			$postid = $this->input->post('postid');
 			$status = 0;
 
-			$this->load->model('Usercomment_model');
+			if ($name && $email && $comment && $postid) {
+				$this->load->model('Website_model');
+				$this->Website_model->commentsave($postid, $name, $email, $comment, $status);
 
-			// Fetch the latest postid and increment it
-			$latest_postid = $this->Website_model->get_latest_postid();
-			$new_postid = $latest_postid + 1;
-
-			// Save the comment
-			$this->Website_model->commentsave($new_postid, $name, $email, $comment, $status);
-
-			echo json_encode([
-				"statusCode" => 200,
-				"new_postid" => $new_postid // Send the new postid back to the client
-			]);
+				// Redirect back to the post view after success
+				redirect(base_url('welcome/post/' . $postid . '?success=1'));
+			} else {
+				// Reload post.php with error message
+				$this->load->model('Website_model');
+				$data['error'] = 'Please fill in all fields.';
+				$data['viewdetails'] = $this->Website_model->get_post_details($postid);
+				$data['comment'] = $this->Website_model->get_post_comments($postid);
+				$this->load->view('post', $data);
+			}
 		}
 	}
 }
