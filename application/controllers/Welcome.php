@@ -87,8 +87,8 @@ class Welcome extends CI_Controller
 				// Reload post.php with error message
 				$this->load->model('Website_model');
 				$data['error'] = 'Please fill in all fields.';
-				$data['viewdetails'] = $this->Website_model->get_post_details($postid);
-				$data['comment'] = $this->Website_model->get_post_comments($postid);
+				$data['viewdetails'] = $this->Website_model->getwebsitedetails($postid); // ✅ FIXED
+				$data['comment'] = $this->Website_model->getcomment($postid);
 				$this->load->view('post', $data);
 			}
 		}

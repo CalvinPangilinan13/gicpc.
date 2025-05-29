@@ -142,7 +142,7 @@
                                 </div>
                                 <div class="mt-3">
                                     <textarea name="comment" class="form-control" rows="4"
-                                        placeholder="Enter your comment..."><?= set_value('comment') ?></textarea>
+                                        placeholder="Enter your comment..." required><?= set_value('comment') ?></textarea>
                                 </div>
                                 <div class="text-end mt-4">
                                     <button type="submit" class="btn btn-primary px-4 py-2">Submit</button>
