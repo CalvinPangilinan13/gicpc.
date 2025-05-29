@@ -11,7 +11,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Blog Home - Start Bootstrap Template</title>
+    <link rel="icon" href="assets/images/head.png.png" type="images/head.png.png">
+    <title>TBTayo!</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Core theme CSS (includes Bootstrap)-->

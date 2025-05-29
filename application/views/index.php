@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
    <title>Quantum Able Bootstrap 4 Admin Dashboard Template</title>
-  <meta charset="utf-8">
+   <meta charset="utf-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
    <!-- Favicon icon -->
    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+   <link rel="icon" href="assets/images/head.png.png" type="images/head.png.png">
    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
 
    <!-- Google font-->
@@ -22,12 +24,12 @@
 </head>
 
 <body class="sidebar-mini fixed">
-   
+
    <div class="wrapper">
       <!-- Navbar-->
-  <?php include 'include/header.php';?>
+      <?php include 'include/header.php'; ?>
       <!-- Side-Nav-->
-       <?php include 'include/sidebar.php';?>
+      <?php include 'include/sidebar.php'; ?>
       <div class="content-wrapper">
          <!-- Container-fluid starts -->
          <!-- Main content starts -->
@@ -80,19 +82,20 @@
                   </div>
                </div>
             </div>
-          </div>
-         
+         </div>
+
       </div>
    </div>
 
 
-  
+
    <!-- Required Jqurey -->
    <script src="assets/plugins/Jquery/dist/jquery.min.js"></script>
    <script src="assets/plugins/jquery-ui/jquery-ui.min.js"></script>
    <script src="assets/plugins/tether/dist/js/tether.min.js"></script>
    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="assets/js/main.min.js"></script>
+   <script type="text/javascript" src="assets/js/main.min.js"></script>
    <script src="assets/js/menu.min.js"></script>
 </body>
+
 </html>

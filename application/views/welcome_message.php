@@ -5,6 +5,7 @@
     }
 </style>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -29,6 +30,47 @@
     <!-- Page content-->
     <div class="container">
         <div class="row">
+            <?php if (count($viewdetails)): ?>
+                <div id="newsImageCarousel" class="carousel slide mb-5" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <?php for ($i = 0; $i < count($viewdetails); $i++): ?>
+                            <button type="button" data-bs-target="#newsImageCarousel" data-bs-slide-to="<?php echo $i; ?>"
+                                class="<?php echo $i === 0 ? 'active' : ''; ?>"
+                                aria-current="<?php echo $i === 0 ? 'true' : 'false'; ?>"
+                                aria-label="Slide <?php echo $i + 1; ?>"></button>
+                        <?php endfor; ?>
+                    </div>
+                    <div class="carousel-inner">
+                        <?php
+                        $active = true;
+                        foreach ($viewdetails as $row):
+                            $imgPath = base_url('uploads/files/' . $row->Upload_Image);
+                            ?>
+                            <div class="carousel-item <?php echo $active ? 'active' : ''; ?>">
+                                <img src="<?php echo $imgPath; ?>" class="d-block w-100" alt="..."
+                                    style="height:400px; object-fit:cover;">
+                                <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+                                    <h5><?php echo $row->newtitle; ?></h5>
+                                    <p><?php echo substr($row->Description, 0, 100); ?>...</p>
+                                </div>
+                            </div>
+                            <?php
+                            $active = false;
+                        endforeach;
+                        ?>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#newsImageCarousel"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#newsImageCarousel"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            <?php endif; ?>
             <!-- Blog entries-->
             <div class="col-lg-8">
                 <!-- Featured blog post-->
@@ -157,6 +199,4 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
     <script src="<?php echo base_url('assets/js/scripts.js'); ?>"></script>
-</body>
-
 </html>
