@@ -11,7 +11,7 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
     <link rel="icon" href="assets/images/g.png" type="images/g.png">
-    <title>GICPC UPDATES</title>
+    <title>TBTayo!</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Core theme CSS (includes Bootstrap)-->
