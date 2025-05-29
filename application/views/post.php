@@ -95,7 +95,6 @@
                 <section class="mb-5">
                     <div class="card border-0 shadow-sm rounded-4 animate__animated animate__fadeIn">
                         <div class="card-body">
-
                             <?php if (!empty($comment)): ?>
                                 <?php foreach ($comment as $row): ?>
                                     <div class="d-flex mb-4 border-bottom pb-3">
