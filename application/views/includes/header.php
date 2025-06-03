@@ -4,15 +4,36 @@
     body {
         font-family: 'Poppins', sans-serif;
         margin: 0;
-        padding: 0;
-        background-color: #f9f9f9;
+        padding-top: 80px;
+        background-color: #F0F4F8;
     }
 
     .navbar-modern {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1030;
         background-color: #ffffff;
         box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
         padding: 0.8rem 1rem;
-        transition: all 0.3s ease;
+        transition: transform 0.3s ease-in-out;
+        animation: slideDown 0.6s ease-out;
+    }
+
+    .navbar-hidden {
+        transform: translateY(-100%);
+    }
+
+    @keyframes slideDown {
+        0% {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
     }
 
     .navbar-modern .navbar-brand img {
@@ -98,6 +119,16 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="<?php echo site_url('Welcome/about'); ?>">
+                        👥 About Us
+                    </a>
+                </li>
+                 <li class="nav-item">
+                    <a class="nav-link" href="<?php echo site_url('Welcome/about'); ?>">
+                        🛒  Shop
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="<?php echo site_url('admin/Login'); ?>">
                         🔐 Admin Login
                     </a>
@@ -106,3 +137,21 @@
         </div>
     </div>
 </nav>
+
+
+<script>
+    let lastScrollTop = 0;
+    const navbar = document.querySelector('.navbar-modern');
+
+    window.addEventListener('scroll', function () {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+        if (scrollTop > lastScrollTop) {
+            navbar.classList.add('navbar-hidden');
+        } else {
+            navbar.classList.remove('navbar-hidden');
+        }
+
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    });
+</script>
