@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>News Portal | Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="assets/images/head.png.png" type="images/head.png.png">
+  <title>TBTayo! | Login</title>
+  <!-- Favicon-->
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
   <style>
@@ -15,6 +19,7 @@
       justify-content: center;
       font-family: 'Segoe UI', sans-serif;
     }
+
     .login-card {
       background: #fff;
       border-radius: 15px;
@@ -24,34 +29,41 @@
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
       animation: slideIn 0.5s ease-out;
     }
+
     @keyframes slideIn {
       0% {
         opacity: 0;
         transform: translateY(-30px);
       }
+
       100% {
         opacity: 1;
         transform: translateY(0);
       }
     }
-    .form-floating > .form-control:focus ~ label,
-    .form-floating > .form-control:not(:placeholder-shown) ~ label {
+
+    .form-floating>.form-control:focus~label,
+    .form-floating>.form-control:not(:placeholder-shown)~label {
       transform: scale(0.85) translateY(-1.5rem);
     }
+
     .btn-primary {
       background: #3498db;
       border: none;
       transition: all 0.3s ease;
     }
+
     .btn-primary:hover {
       background: #2980b9;
       transform: scale(1.05);
     }
+
     .login-header {
       margin-bottom: 1.5rem;
     }
   </style>
 </head>
+
 <body>
 
   <div class="login-card">
@@ -61,7 +73,7 @@
     </div>
 
     <?php echo form_open('admin/Login', ['name' => 'adminsignup']); ?>
-    
+
     <?php if ($this->session->flashdata('error')): ?>
       <div class="alert alert-danger py-1">
         <?= $this->session->flashdata('error'); ?>
@@ -89,4 +101,5 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
