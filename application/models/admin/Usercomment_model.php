@@ -12,13 +12,9 @@ class Usercomment_model extends CI_Model
     }
 
 
-    public function Approvedcomment($postid, $status)
+    public function Approvedcomment($id, $data)
     {
-        $data = array(
-            'status' => $status
-
-        );
-        $query = $this->db->where('postid', $postid)
+        return $this->db->where('id', $id)
             ->update('tblcomment', $data);
     }
 
@@ -67,6 +63,7 @@ class Usercomment_model extends CI_Model
 
         return $insert;
     }
+    
 
 }
 

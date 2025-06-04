@@ -100,7 +100,7 @@ class News extends CI_Controller {
 	//Delete Record  
 	public function delete($uid){
 	$this->addpost->deletenews($uid);
-	$this->session->set_flashdata('success','Delete Record deleted');
+	$this->session->set_flashdata('success','Blog Record deleted');
 	redirect('admin/News/managenews');
 	}
 
@@ -138,7 +138,7 @@ class News extends CI_Controller {
 			  }
 			}
 			$this->addpost->updatenews($uid,$title,$category,$subcategory,$description,$uploadimage); 
-			$this->session->set_flashdata('success','News updated successfull');
+			$this->session->set_flashdata('success','Blog Post updated successfull');
 			redirect('admin/News/managenews',$userdetails);
 		  }
 		 else {
