@@ -2,7 +2,7 @@
 <html lang="en">
 <style>
     .new-background {
-        background: #FFCD90 !important;
+        background: #0074D9 !important;
     }
 </style>
 

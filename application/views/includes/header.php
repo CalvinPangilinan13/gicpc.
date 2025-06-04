@@ -13,7 +13,7 @@
         top: 0;
         width: 100%;
         z-index: 1030;
-        background-color: #ffffff;
+        background-color: #001F3F;
         box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
         padding: 0.8rem 1rem;
         transition: transform 0.3s ease-in-out;
@@ -46,7 +46,7 @@
     }
 
     .navbar-modern .nav-link {
-        color: #333 !important;
+        color: #FFFFFF !important;
         font-weight: 500;
         font-size: 16px;
         margin-left: 1rem;
@@ -55,6 +55,7 @@
         transition: color 0.3s ease, transform 0.3s ease;
         display: flex;
         align-items: center;
+
     }
 
     .navbar-modern .nav-link::after {
@@ -65,7 +66,7 @@
         transform: translateX(-50%);
         width: 0%;
         height: 2px;
-        background-color: #007bff;
+        background-color: #FFFFFF;
         transition: 0.3s ease-in-out;
     }
 
@@ -74,7 +75,7 @@
     }
 
     .navbar-modern .nav-link:hover {
-        color: #007bff !important;
+        color: #FFFFFF !important;
         transform: translateY(-1px);
     }
 
@@ -119,13 +120,13 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo site_url('Welcome/about'); ?>">
+                    <a class="nav-link" href="<?php echo site_url('admin/About'); ?>">
                         👥 About Us
                     </a>
                 </li>
-                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo site_url('Welcome/about'); ?>">
-                        🛒  Shop
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php echo site_url('admin/Shop'); ?>">
+                        🛒 Shop
                     </a>
                 </li>
                 <li class="nav-item">
