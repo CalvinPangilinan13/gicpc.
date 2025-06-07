@@ -11,8 +11,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <link rel="icon" href="assets/images/head.png.png" type="images/head.png.png">
     <title>TBTayo!</title>
+    <link rel="icon" href="assets/images/head.png.png" type="image/png">
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Core theme CSS (includes Bootstrap)-->
@@ -50,18 +50,12 @@
                                 ?>
                                 <div class="small text-muted"><?php echo date('M d, Y', $date); ?></div>
                                 <h2 class="card-title"><?php echo $row->newtitle; ?></h2>
-                                <p class="card-text"><?php echo substr($row->Description, 0, 200); ?></p>
-                                <?php echo anchor("Welcome/post/{$row->id}", 'Read more →'); ?>
+                                <p class="card-text"><?php echo substr($row->Description, 0, 200); ?>...</p>
+                                <?php echo anchor("Welcome/post/{$row->id}", 'Read more →', 'class="btn btn-outline-primary btn-sm"'); ?>
                             </div>
                         </div>
-                        <?php
-                        $cnt = $cnt + 1;
-                    endforeach;
-                else:
-                    ?>
-                    <tr>
-                        <td colspan="5" style="color:red; text-align:center">No Record found</td>
-                    </tr>
+                    <?php endforeach; else: ?>
+                    <p class="text-center text-danger">No Record found</p>
                 <?php endif; ?>
 
                 <!-- Nested row for non-featured blog posts-->
@@ -72,77 +66,68 @@
             <!-- Side widgets-->
             <div class="col-lg-4">
                 <!-- Search widget-->
-                <div class="card mb-4">
-                    <div class="card-header new-background"><i class="bi bi-search me-2"></i>Search</div>
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header bg-primary text-white">
+                        <i class="bi bi-search me-2"></i> Search
+                    </div>
                     <div class="card-body">
-                        <?php echo form_open('Search/index', ['class' => 'php-email-form']); ?>
-
+                        <?php echo form_open('Search/index'); ?>
                         <div class="input-group">
-                            <input class="form-control" type="text" name="searchdata" id="searchdata"
-                                placeholder="Enter search term..." aria-label="Enter search term..."
-                                aria-describedby="button-search" />
-                            <input type="submit" name="submit" id="submit" class="btn btn-primary" value="Go!">
-                            <!-- <button class="btn btn-primary" id="button-search" type="button">Go!</button> -->
+                            <input type="text" class="form-control" name="searchdata" placeholder="Type a keyword..."
+                                aria-label="Search">
+                            <button class="btn btn-primary" type="submit">
+                                <i class="bi bi-arrow-right-circle"></i>
+                            </button>
                         </div>
                         </form>
                     </div>
                 </div>
-                <!-- Categories widget-->
-                <div class="card mb-4">
-                    <div class="card-header new-background"><i class="bi bi-list-ul me-2"></i>Categories</div>
-                    <div class="card-body">
-                        <div class="row">
-                            <?php
-                            if (count($category)):
-                                $cnt = 1;
-                                foreach ($category as $row):
-                                    ?>
-                                    <div class="col-sm-6">
-                                        <ul class="list-unstyled mb-0">
-                                            <?php $cat = $row->name; ?>
-                                            <li> <?php echo anchor("Category/index/{$row->id}", $cat); ?></li>
-                                        </ul>
-                                    </div>
-                                    <?php
-                                    $cnt = $cnt + 1;
-                                endforeach;
-                            else:
-                                ?>
-                                <tr>
-                                    <td colspan="5" style="color:red; text-align:center">No Record found</td>
-                                </tr>
-                            <?php endif; ?>
 
-                        </div>
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header bg-primary text-white">
+                        <i class="bi bi-list-ul me-2"></i> Categories
+                    </div>
+                    <div class="card-body">
+                        <?php if (count($category)): ?>
+                            <div class="row row-cols-2 g-2">
+                                <?php foreach ($category as $row): ?>
+                                    <div class="col">
+                                        <a href="<?php echo base_url("Category/index/{$row->id}"); ?>"
+                                            class="text-decoration-none text-dark">
+                                            <div class="border rounded p-2 d-flex align-items-center hover-shadow-sm">
+                                                <i class="bi bi-folder-fill me-2 text-primary"></i>
+                                                <span><?php echo $row->name; ?></span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                <?php endforeach; ?>
+                            </div>
+                        <?php else: ?>
+                            <p class="text-muted text-center mb-0">No categories available.</p>
+                        <?php endif; ?>
                     </div>
                 </div>
 
-
-                <!-- Side widget-->
-                <div class="card mb-4">
-                    <div class="card-header new-background"><i class="bi bi-newspaper me-2"></i>Recent Update</div>
-
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header bg-primary text-white">
+                        <i class="bi bi-newspaper me-2"></i> Recent Updates
+                    </div>
                     <div class="card-body">
-                        <?php
-                        if (count($resentlypost)):
-                            $cnt = 1;
-                            foreach ($resentlypost as $row):
-                                ?>
-                                <ul>
-
-                                    <?php $shiv = $row->newtitle; ?>
-
-                                    <li><?php echo anchor("Welcome/post/{$row->id}", $shiv); ?></li>
-
-                                </ul>
-                                <?php
-                                $cnt = $cnt + 1;
-                            endforeach;
-                        else:
-                            ?>
-                            <tr>
-                                <td colspan="5" style="color:red; text-align:center">No Record found</td>
-                            </tr>
+                        <?php if (count($resentlypost)): ?>
+                            <ul class="list-group list-group-flush">
+                                <?php foreach ($resentlypost as $row): ?>
+                                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                                        <div class="ms-2 me-auto">
+                                            <div class="fw-semibold">
+                                                <?php echo anchor("Welcome/post/{$row->id}", $row->newtitle); ?>
+                                            </div>
+                                        </div>
+                                        <i class="bi bi-chevron-right text-muted"></i>
+                                    </li>
+                                <?php endforeach; ?>
+                            </ul>
+                        <?php else: ?>
+                            <p class="text-muted text-center mb-0">No recent updates found.</p>
                         <?php endif; ?>
                     </div>
                 </div>

@@ -1,202 +1,206 @@
 <!DOCTYPE html>
-<style>
-    .new-background {
-        background: #0074D9 !important;
-    }
-</style>
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <link rel="icon" href="assets/images/head.png.png" type="images/head.png.png">
-    <title>TBTayo!</title>
-    <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-    <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="<?php echo base_url('assets/css/styles.css'); ?>" rel="stylesheet" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TBTayo! | Adventures and Stories</title>
+    <link rel="icon" href="assets/images/head.png.png" type="image/png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f8f9fa;
+            color: #212529;
+        }
+
+        .carousel-container {
+            background-color: #ffffff;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid #dee2e6;
+            border-radius: 0.5rem;
+        }
+
+        .carousel-inner img {
+            height: 400px;
+            object-fit: cover;
+            border-radius: 0.5rem;
+        }
+
+        .carousel-caption {
+            background-color: rgba(255, 255, 255, 0.85);
+            color: #212529;
+            padding: 1rem;
+            border-radius: 0.5rem;
+        }
+
+        .main-header {
+            background-color: #ffffff;
+            padding: 2.5rem 0;
+            border-bottom: 1px solid #dee2e6;
+            text-align: center;
+        }
+
+        .main-header h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .card-header {
+            background-color: #0074D9;
+            color: white;
+            font-weight: 600;
+        }
+
+        .blog-card img {
+            height: 250px;
+            object-fit: cover;
+        }
+    </style>
 </head>
 
 <body>
-    <!-- Responsive navbar-->
     <?php include APPPATH . 'views/includes/header.php'; ?>
-    <!-- Page header with logo and tagline-->
-    <header class="py-5 bg-light border-bottom mb-4">
 
+    <header class="main-header">
+        <div class="container">
+            <h1>TBTayo!</h1>
+            <p>Your formal source of adventures and stories</p>
+        </div>
     </header>
-    <!-- Page content-->
-    <div class="container">
-        <div class="row">
-            <?php if (count($viewdetails)): ?>
-                <div id="newsImageCarousel" class="carousel slide mb-5" data-bs-ride="carousel">
-                    <div class="carousel-indicators">
-                        <?php for ($i = 0; $i < count($viewdetails); $i++): ?>
-                            <button type="button" data-bs-target="#newsImageCarousel" data-bs-slide-to="<?php echo $i; ?>"
-                                class="<?php echo $i === 0 ? 'active' : ''; ?>"
-                                aria-current="<?php echo $i === 0 ? 'true' : 'false'; ?>"
-                                aria-label="Slide <?php echo $i + 1; ?>"></button>
-                        <?php endfor; ?>
-                    </div>
-                    <div class="carousel-inner">
-                        <?php
-                        $active = true;
-                        foreach ($viewdetails as $row):
-                            $imgPath = base_url('uploads/files/' . $row->Upload_Image);
-                            ?>
-                            <div class="carousel-item <?php echo $active ? 'active' : ''; ?>">
-                                <img src="<?php echo $imgPath; ?>" class="d-block w-100" alt="..."
-                                    style="height:400px; object-fit:cover;">
-                                <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
-                                    <h5><?php echo $row->newtitle; ?></h5>
-                                    <p><?php echo substr($row->Description, 0, 100); ?>...</p>
-                                </div>
-                            </div>
-                            <?php
-                            $active = false;
-                        endforeach;
-                        ?>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#newsImageCarousel"
-                        data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#newsImageCarousel"
-                        data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                </div>
-            <?php endif; ?>
-            <!-- Blog entries-->
-            <div class="col-lg-8">
-                <!-- Featured blog post-->
-                <?php
-                if (count($viewdetails)):
-                    $cnt = 1;
-                    foreach ($viewdetails as $row):
-                        ?>
-                        <div class="card mb-4">
-                            <a href="#!"><img width="100%" src="<?php echo base_url('uploads/files/' . $row->Upload_Image); ?>"
-                                    alt="..." height="400" /></a>
 
-                            <div class="card-body">
-                                <?php
-                                $input = $row->create_date;
-                                $date = strtotime($input);
-
-                                ?>
-                                <div class="small text-muted"><?php echo date('M d, Y', $date); ?></div>
-                                <h2 class="card-title"><?php echo $row->newtitle; ?></h2>
-                                <p class="card-text"><?php echo substr($row->Description, 0, 200); ?></p>
-                                <?php echo anchor("Welcome/post/{$row->id}", 'Read more →'); ?>
+    <?php if (count($viewdetails)): ?>
+        <div class="container carousel-container">
+            <h5 class="mb-3">Top Stories</h5>
+            <div id="newsCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <?php $active = true;
+                    foreach ($viewdetails as $row): ?>
+                        <div class="carousel-item <?php echo $active ? 'active' : ''; ?>">
+                            <img src="<?php echo base_url('uploads/files/' . $row->Upload_Image); ?>" class="d-block w-100"
+                                alt="Slide">
+                            <div class="carousel-caption">
+                                <h5><?php echo $row->newtitle; ?></h5>
+                                <p class="mb-0 small"><?php echo substr($row->Description, 0, 100); ?>...</p>
                             </div>
                         </div>
-                        <?php
-                        $cnt = $cnt + 1;
-                    endforeach;
-                else:
-                    ?>
-                    <tr>
-                        <td colspan="5" style="color:red; text-align:center">No Record found</td>
-                    </tr>
+                        <?php $active = false; endforeach; ?>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#newsCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#newsCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
+        </div>
+    <?php endif; ?>
+
+    <main class="container my-4">
+        <div class="row g-5">
+            <div class="col-lg-8">
+                <?php if (count($viewdetails)):
+                    foreach ($viewdetails as $row): ?>
+                        <div class="card mb-4 blog-card">
+                            <img src="<?php echo base_url('uploads/files/' . $row->Upload_Image); ?>" class="card-img-top"
+                                alt="Post Image">
+                            <div class="card-body">
+                                <small
+                                    class="text-muted d-block mb-2"><?php echo date('M d, Y', strtotime($row->create_date)); ?></small>
+                                <h5 class="card-title"><?php echo $row->newtitle; ?></h5>
+                                <p class="card-text"><?php echo substr($row->Description, 0, 200); ?>...</p>
+                                <?php echo anchor("Welcome/post/{$row->id}", 'Read more →', 'class="btn btn-outline-primary btn-sm"'); ?>
+                            </div>
+                        </div>
+                    <?php endforeach; else: ?>
+                    <p class="text-center text-danger">No posts available.</p>
                 <?php endif; ?>
 
-                <!-- Nested row for non-featured blog posts-->
-
-                <!-- Pagination-->
-                <nav aria-label="Pagination">
-                    <hr class="my-0" />
+                <nav class="mt-4" aria-label="Pagination">
                     <p><?php echo $links; ?></p>
                 </nav>
             </div>
-            <!-- Side widgets-->
-            <div class="col-lg-4">
-                <!-- Search widget-->
-                <div class="card mb-4">
-                    <div class="card-header new-background"> <i class="bi bi-search me-2"></i> Search</div>
-                    <div class="card-body">
-                        <?php echo form_open('Search/index', ['class' => 'php-email-form']); ?>
 
+            <aside class="col-lg-4">
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header bg-primary text-white">
+                        <i class="bi bi-search me-2"></i> Search
+                    </div>
+                    <div class="card-body">
+                        <?php echo form_open('Search/index'); ?>
                         <div class="input-group">
-                            <input class="form-control" type="text" name="searchdata" id="searchdata"
-                                placeholder="Enter search term..." aria-label="Enter search term..."
-                                aria-describedby="button-search" />
-                            <input type="submit" name="submit" id="submit" class="btn btn-primary" value="Go!">
-                            <!-- <button class="btn btn-primary" id="button-search" type="button">Go!</button> -->
+                            <input type="text" class="form-control" name="searchdata" placeholder="Type a keyword..."
+                                aria-label="Search">
+                            <button class="btn btn-primary" type="submit">
+                                <i class="bi bi-arrow-right-circle"></i>
+                            </button>
                         </div>
                         </form>
                     </div>
                 </div>
-                <!-- Categories widget-->
-                <div class="card mb-4">
-                    <div class="card-header new-background"><i class="bi bi-list-ul me-2"></i>Categories</div>
-                    <div class="card-body">
-                        <div class="row">
-                            <?php
-                            if (count($category)):
-                                $cnt = 1;
-                                foreach ($category as $row):
-                                    ?>
-                                    <div class="col-sm-6">
-                                        <ul class="list-unstyled mb-0">
-                                            <?php $cat = $row->name; ?>
-                                            <li> <?php echo anchor("Category/index/{$row->id}", $cat); ?></li>
-                                        </ul>
-                                    </div>
-                                    <?php
-                                    $cnt = $cnt + 1;
-                                endforeach;
-                            else:
-                                ?>
-                                <tr>
-                                    <td colspan="5" style="color:red; text-align:center">No Record found</td>
-                                </tr>
-                            <?php endif; ?>
 
-                        </div>
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header bg-primary text-white">
+                        <i class="bi bi-list-ul me-2"></i> Categories
                     </div>
-                </div>
-
-
-                <!-- Side widget-->
-                <div class="card mb-4">
-                    <div class="card-header new-background"> <i class="bi bi-newspaper me-2"></i>Recent Update</div>
-
                     <div class="card-body">
-                        <?php
-                        if (count($resentlypost)):
-                            $cnt = 1;
-                            foreach ($resentlypost as $row):
-                                ?>
-                                <ul>
-
-                                    <?php $shiv = $row->newtitle; ?>
-
-                                    <li><?php echo anchor("Welcome/post/{$row->id}", $shiv); ?></li>
-
-                                </ul>
-                                <?php
-                                $cnt = $cnt + 1;
-                            endforeach;
-                        else:
-                            ?>
-                            <tr>
-                                <td colspan="5" style="color:red; text-align:center">No Record found</td>
-                            </tr>
+                        <?php if (count($category)): ?>
+                            <div class="row row-cols-2 g-2">
+                                <?php foreach ($category as $row): ?>
+                                    <div class="col">
+                                        <a href="<?php echo base_url("Category/index/{$row->id}"); ?>"
+                                            class="text-decoration-none text-dark">
+                                            <div class="border rounded p-2 d-flex align-items-center hover-shadow-sm">
+                                                <i class="bi bi-folder-fill me-2 text-primary"></i>
+                                                <span><?php echo $row->name; ?></span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                <?php endforeach; ?>
+                            </div>
+                        <?php else: ?>
+                            <p class="text-muted text-center mb-0">No categories available.</p>
                         <?php endif; ?>
                     </div>
                 </div>
-            </div>
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header bg-primary text-white">
+                        <i class="bi bi-newspaper me-2"></i> Recent Updates
+                    </div>
+                    <div class="card-body">
+                        <?php if (count($resentlypost)): ?>
+                            <ul class="list-group list-group-flush">
+                                <?php foreach ($resentlypost as $row): ?>
+                                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                                        <div class="ms-2 me-auto">
+                                            <div class="fw-semibold">
+                                                <?php echo anchor("Welcome/post/{$row->id}", $row->newtitle); ?>
+                                            </div>
+                                        </div>
+                                        <i class="bi bi-chevron-right text-muted"></i>
+                                    </li>
+                                <?php endforeach; ?>
+                            </ul>
+                        <?php else: ?>
+                            <p class="text-muted text-center mb-0">No recent updates found.</p>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            </aside>
         </div>
-    </div>
-    <!-- Footer-->
+    </main>
+
     <?php include APPPATH . 'views/includes/footer.php'; ?>
-    <!-- Bootstrap core JS-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Core theme JS-->
-    <script src="<?php echo base_url('assets/js/scripts.js'); ?>"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
 </html>
