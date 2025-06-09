@@ -15,6 +15,7 @@ class Dashboard extends CI_Controller {
 		$data['totalcategory'] = $this->Dashboard->totalcategorycount();
 		$data['totalsubcategory'] = $this->Dashboard->totalsubcategorycount();
 		$data['totalcomment'] = $this->Dashboard->totalcommentcount();
+		$data['totaladmin'] = $this->Dashboard->totaladmincount();
 		$this->load->view('admin/dashboard',$data);
 
 	}

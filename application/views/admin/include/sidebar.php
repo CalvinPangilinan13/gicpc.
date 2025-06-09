@@ -63,7 +63,7 @@
                 <ul class="treeview-menu">
                     <li><a href="<?= base_url('admin/Admin/add'); ?>"><i class="icon-arrow-right"></i> Add Admin
                             Account</a></li>
-                    <li><a href="<?= base_url('admin/Admin/manageadmin'); ?>" target="_blank"><i
+                    <li><a href="<?= base_url('admin/Admin/manageadd'); ?>" target="_blank"><i
                                 class="icon-arrow-right"></i> Manage Admin Account</a></li>
                 </ul>
             </li>

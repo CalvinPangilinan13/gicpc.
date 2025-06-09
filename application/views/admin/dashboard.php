@@ -36,6 +36,7 @@
          position: relative;
          transition: all 0.3s ease;
          color: #ffffff;
+         margin-bottom: 30px;
       }
 
       .dashboard-product:hover {
@@ -136,18 +137,28 @@
                      <div class="side-box text-danger"><i class="ti-rocket"></i></div>
                   </div>
                </div>
+
+
+
+               <!-- Total Admins -->
+               <div class="col-lg-3 col-md-6 mb-4">
+                  <div class="dashboard-product">
+                     <h2 class="dashboard-total-products"><?php echo $totaladmin; ?></h2>
+                     <p><span class="emoji">👨‍💼</span>Admin Accounts</p>
+                     <div class="side-box text-danger"><i class="ti-rocket"></i></div>
+                  </div>
+               </div>
+
             </div>
          </div>
-      </div>
-   </div>
 
-   <!-- JS Scripts -->
-   <script src="<?php echo base_url('assets/plugins/Jquery/dist/jquery.min.js'); ?>"></script>
-   <script src="<?php echo base_url('assets/plugins/jquery-ui/jquery-ui.min.js'); ?>"></script>
-   <script src="<?php echo base_url('assets/plugins/tether/dist/js/tether.min.js'); ?>"></script>
-   <script src="<?php echo base_url('assets/plugins/bootstrap/js/bootstrap.min.js'); ?>"></script>
-   <script src="<?php echo base_url('assets/js/main.min.js'); ?>"></script>
-   <script src="<?php echo base_url('assets/js/menu.min.js'); ?>"></script>
+         <!-- JS Scripts -->
+         <script src="<?php echo base_url('assets/plugins/Jquery/dist/jquery.min.js'); ?>"></script>
+         <script src="<?php echo base_url('assets/plugins/jquery-ui/jquery-ui.min.js'); ?>"></script>
+         <script src="<?php echo base_url('assets/plugins/tether/dist/js/tether.min.js'); ?>"></script>
+         <script src="<?php echo base_url('assets/plugins/bootstrap/js/bootstrap.min.js'); ?>"></script>
+         <script src="<?php echo base_url('assets/js/main.min.js'); ?>"></script>
+         <script src="<?php echo base_url('assets/js/menu.min.js'); ?>"></script>
 </body>
 
 </html>
