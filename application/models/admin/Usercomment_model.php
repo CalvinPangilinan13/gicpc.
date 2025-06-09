@@ -5,7 +5,7 @@ class Usercomment_model extends CI_Model
 
     public function managecomment()
     {
-        $query = $this->db->select('id, postid, name, emailid, comment, status, create_date')
+        $query = $this->db->select('id, postid, name, emailid, comment, status, create_date, reply')
             ->from('tblcomment')
             ->get();
         return $query->result();
@@ -43,14 +43,15 @@ class Usercomment_model extends CI_Model
         return 0;
     }
 
-    public function commentsave($postid, $name, $emailid, $comment, $status)
+    public function commentsave($postid, $name, $emailid, $comment, $status, $reply)
     {
         $data = [
             'postid' => $postid,
             'name' => $name,
             'emailid' => $emailid, // must match DB column name exactly
             'comment' => $comment,
-            'status' => $status
+            'status' => $status,
+            'reply' => $reply
         ];
 
         $insert = $this->db->insert('tblcomment', $data);

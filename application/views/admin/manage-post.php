@@ -53,7 +53,7 @@
          <div class="container-fluid">
             <div class="row">
                <div class="main-header">
-                  <h4>📰 Manage Blogs</h4>
+                  <h4>✍️ Manage Blog Post</h4>
                </div>
             </div>
 
@@ -72,7 +72,7 @@
                               <table class="table table-bordered table-hover table-striped align-middle">
                                  <thead class="bg-primary text-white">
                                     <tr>
-                                       <th>Sr. No</th>
+                                       <th>ID</th>
                                        <th>Title</th>
                                        <th>Category</th>
                                        <th>Sub Category</th>

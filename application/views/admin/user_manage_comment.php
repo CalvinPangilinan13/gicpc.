@@ -68,6 +68,7 @@
                                        <th>Email</th>
                                        <th>User Comment</th>
                                        <th>Status</th>
+                                       <th>Reply</th>
                                        <th>Post ID Ref</th>
                                        <th>Action</th>
                                     </tr>
@@ -89,6 +90,7 @@
                                                    <span class="badge bg-danger">🔐</span>
                                                 <?php endif; ?>
                                              </td>
+                                             <td><?php echo $row->reply; ?></td>
                                              <td><?php echo $row->postid; ?></td>
                                              <td>
                                                 <button class="btn btn-sm btn-outline-primary" data-toggle="modal"
