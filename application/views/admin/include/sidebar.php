@@ -68,6 +68,20 @@
                 </ul>
             </li>
 
+            <!-- About us -->
+            <li class="treeview">
+                <a href="#!">
+                    <i class="icon-user me-2"></i>
+                    <span>About Us Information</span>
+                    <i class="icon-arrow-down arrow-indicator"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="<?= base_url('admin/Aboutus/add'); ?>"><i class="icon-arrow-right"></i> Add Aboutus Information</a></li>
+                    <li><a href="<?= base_url('admin/aboutus/manage'); ?>" target="_blank"><i
+                                class="icon-arrow-right"></i> Manage About us Information</a></li>
+                </ul>
+            </li>
+
             <!-- Comments -->
             <li class="treeview">
                 <a href="#!">
