@@ -42,4 +42,8 @@ class About_model extends CI_Model
             ->get();
         return $query->row(); // returns a single object
     }
+    public function getAllAbout()
+    {
+        return $this->db->get('tblabout')->result(); // adjust table name if needed
+    }
 }

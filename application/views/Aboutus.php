@@ -4,63 +4,120 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Tara Libot Tayo! About us Coming Soon</title>
+    <title>TBTayo! | About Us</title>
+    <link rel="icon" href="assets/images/head.png.png" type="images/head.png.png">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+
+
     <style>
         body {
-            background: linear-gradient(135deg, #0074D9, #00BFFF);
-            color: white;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            height: 100vh;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(to bottom right, #f0f4f8, #ffffff);
+            color: #222;
         }
 
-        .coming-soon-box {
-            text-align: center;
-            margin: auto;
-            animation: fadeInUp 1s ease-out forwards;
-            opacity: 0;
+        .about-container {
+            max-width: 960px;
+            margin: 80px auto;
+            padding: 2rem;
+            background-color: #ffffff;
+            border-radius: 1rem;
+            animation: fadeIn 0.8s ease;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
 
-        .coming-soon-box h1 {
-            font-size: 3rem;
-            font-weight: bold;
+        .about-logo {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 50%;
             margin-bottom: 1rem;
+            border: 3px solid #dee2e6;
+            animation: pulse 2s infinite ease-in-out;
         }
 
-        .coming-soon-box p {
-            font-size: 1.25rem;
-            margin-bottom: 2rem;
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
         }
 
-        .shop-logo {
-            width: 100px;
-            height: 100px;
+        .about-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #004085;
+        }
+
+        .about-subtitle {
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: #6c757d;
             margin-bottom: 1.5rem;
-            animation: spin 3s linear infinite;
+        }
+
+        .about-section {
+            margin-bottom: 2rem;
+            animation: fadeInUp 0.6s ease;
+        }
+
+        .section-title {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .divider {
+            height: 1px;
+            background-color: #dee2e6;
+            margin: 2rem 0;
+        }
+
+        .social-links a {
+            color: #343a40;
+            /* darker, always visible */
+            margin: 0 0.5rem;
+            font-size: 1.4rem;
+            transition: transform 0.2s, color 0.2s;
+        }
+
+        .social-links a:hover {
+            transform: scale(1.2);
+            color: #0d6efd;
+            /* bright blue on hover */
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         @keyframes fadeInUp {
-            0% {
-                transform: translateY(50px);
+            from {
                 opacity: 0;
+                transform: translateY(30px);
             }
 
-            100% {
-                transform: translateY(0);
+            to {
                 opacity: 1;
-            }
-        }
-
-        @keyframes spin {
-            0% {
-                transform: rotate(0deg);
-            }
-
-            100% {
-                transform: rotate(360deg);
+                transform: translateY(0);
             }
         }
     </style>
@@ -69,10 +126,95 @@
 <body>
     <?php include APPPATH . 'views/includes/header.php'; ?>
 
-    <div class="coming-soon-box">
-        <img src="<?php echo base_url('assets/images/head.png.png'); ?>" alt="Logo" class="shop-logo">
-        <h1>Tara Libot Tayo!</h1>
-        <p class="lead">About us is <strong>Coming Soon</strong>... Get Ready to know us!</p>
+    <div class="container">
+        <?php if (!empty($about)): ?>
+            <?php foreach ($about as $entry): ?>
+                <div class="about-container text-center mb-5">
+                    <img src="<?= base_url('uploads/files/' . $entry->image_url); ?>" alt="Founder" class="about-logo">
+                    <h1 class="about-title"><?= $entry->title; ?></h1>
+                    <p class="about-subtitle"><?= $entry->subtitle; ?></p>
+
+                    <div class="divider"></div>
+
+                    <div class="about-section">
+                        <h5 class="section-title">📖 About Me</h5>
+                        <p><?= nl2br($entry->content); ?></p>
+                    </div>
+
+                    <div class="about-section">
+                        <h5 class="section-title">🎯 My Vision</h5>
+                        <p><?= nl2br($entry->vision); ?></p>
+                    </div>
+
+                    <div class="about-section">
+                        <h5 class="section-title">🚀 My Mission</h5>
+                        <p><?= nl2br($entry->mission); ?></p>
+                    </div>
+
+                    <div class="divider"></div>
+
+                    <div class="about-section">
+                        <h5 class="section-title">👤 Author Name</h5>
+                        <p><?= $entry->founder_name; ?> — <?= date('F d, Y', strtotime($entry->founded_date)); ?></p>
+                    </div>
+
+                    <div class="about-section">
+                        <h5 class="section-title">📍 Location</h5>
+                        <p><?= $entry->location; ?></p>
+                    </div>
+
+                    <div class="about-section">
+                        <h5 class="section-title">📬 Contact Email</h5>
+                        <?php if (!empty($entry->contact_email)): ?>
+                            <p>
+                                <a href="mailto:<?= htmlspecialchars($entry->contact_email); ?>" class="text-dark">
+                                    <?= htmlspecialchars($entry->contact_email); ?>
+                                </a>
+                            </p>
+                        <?php else: ?>
+                            <p class="text-muted">No contact email provided.</p>
+                        <?php endif; ?>
+                    </div>
+
+                    <div class="about-section social-links">
+                        <h5 class="section-title">🌐 Follow Me</h5>
+                        <?php
+                        $socials = json_decode($entry->social_links);
+                        if (!empty($socials)) {
+                            foreach ($socials as $platform => $url) {
+                                switch (strtolower($platform)) {
+                                    case 'facebook':
+                                        $icon = 'fab fa-facebook-f';
+                                        break;
+                                    case 'instagram':
+                                        $icon = 'fab fa-instagram';
+                                        break;
+                                    case 'youtube':
+                                        $icon = 'fab fa-youtube';
+                                        break;
+                                    case 'twitter':
+                                        $icon = 'fab fa-twitter';
+                                        break;
+                                    case 'linkedin':
+                                        $icon = 'fab fa-linkedin-in';
+                                        break;
+                                    default:
+                                        $icon = 'fas fa-link';
+                                }
+                                echo "<a href='$url' target='_blank' aria-label='$platform'><i class='$icon'></i></a>";
+                            }
+                        } else {
+                            echo '<p class="text-muted">No social links provided.</p>';
+                        }
+                        ?>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        <?php else: ?>
+            <div class="text-center mt-5">
+                <h3>No About Us information available yet.</h3>
+            </div>
+        <?php endif; ?>
     </div>
 
     <?php include APPPATH . 'views/includes/footer.php'; ?>
