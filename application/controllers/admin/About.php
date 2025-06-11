@@ -7,10 +7,10 @@ class About extends CI_Controller
     {
         parent::__construct();
 
-        // Model and session check
-        if (!$this->session->userdata('uid')) {
-            redirect('admin/login');
-        }
+        // // Model and session check
+        // if (!$this->session->userdata('uid')) {
+        //     redirect('admin/login');
+        // }
 
         $this->load->model('admin/About_model', 'aboutmodel');
     }
