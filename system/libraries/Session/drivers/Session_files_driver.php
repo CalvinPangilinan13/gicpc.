@@ -4,6 +4,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 #[\AllowDynamicProperties]
 class CI_Session_files_driver extends CI_Session_driver implements SessionHandlerInterface
 {
+    protected $_file_path;
 
     #[\ReturnTypeWillChange]
     public function open($save_path, $name)
