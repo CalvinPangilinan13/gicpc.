@@ -1,42 +1,60 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 #[\AllowDynamicProperties]
-class CI_Session_files_driver extends CI_Session_driver implements SessionHandlerInterface {
+class CI_Session_files_driver extends CI_Session_driver implements SessionHandlerInterface
+{
 
     #[\ReturnTypeWillChange]
     public function open($save_path, $name)
     {
-        // open logic
+        $this->_save_path = $save_path;
+        return true;
     }
 
     #[\ReturnTypeWillChange]
     public function close()
     {
-        // close logic
+        return true;
     }
 
     #[\ReturnTypeWillChange]
     public function read($session_id)
     {
-        // read logic
+        if (!is_file($this->_file_path . $session_id)) {
+            return '';
+        }
+
+        return (string) file_get_contents($this->_file_path . $session_id);
     }
 
     #[\ReturnTypeWillChange]
     public function write($session_id, $session_data)
     {
-        // write logic
+        return (bool) file_put_contents($this->_file_path . $session_id, $session_data);
     }
 
     #[\ReturnTypeWillChange]
     public function destroy($session_id)
     {
-        // destroy logic
+        $file = $this->_file_path . $session_id;
+
+        if (is_file($file)) {
+            unlink($file);
+        }
+
+        return true;
     }
 
     #[\ReturnTypeWillChange]
     public function gc($maxlifetime)
     {
-        // gc logic
+        foreach (glob($this->_file_path . '*') as $file) {
+            if (filemtime($file) + $maxlifetime < time() && is_file($file)) {
+                unlink($file);
+            }
+        }
+
+        return true;
     }
 }
