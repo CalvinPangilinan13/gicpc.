@@ -13,11 +13,11 @@ class Login_Model extends CI_Model
 		$query = $this->db->get_where('tbladmin', $data);
 		$result = $query->row();
 
-		// Debugging
-		echo '<pre>';
-		print_r($this->db->last_query());
-		print_r($result);
-		exit;
+		// // Debugging
+		// echo '<pre>';
+		// print_r($this->db->last_query());
+		// print_r($result);
+		// exit;
 
 		return $result;
 	}
