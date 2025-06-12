@@ -1252,7 +1252,7 @@ class CI_Upload {
 		 *
 		 * Notes:
 		 *	- the DIRECTORY_SEPARATOR comparison ensures that we're not on a Windows system
-		 *	- many system admins would disable the exec(), shell_exec(), popen() and similar functions
+		 *	- many system admins would disable the exec(), popen() and similar functions
 		 *	  due to security concerns, hence the function_usable() checks
 		 */
 		if (DIRECTORY_SEPARATOR !== '\\')
