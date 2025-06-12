@@ -3,30 +3,15 @@
  * CodeIgniter
  *
  * An open source application development framework for PHP
- *
- * @package	CodeIgniter
- * @author	EllisLab Dev Team
- * @license	https://opensource.org/licenses/MIT	MIT License
- * @link	https://codeigniter.com
- * @since	Version 1.0.0
  */
 
 defined('BASEPATH') or exit('No direct script access allowed');
 
-// Add this attribute to suppress dynamic property deprecation in PHP 8.2+
 #[\AllowDynamicProperties]
 class CI_Loader
 {
-	// Add this property to prevent dynamic assignment warning
-	public $load;
 
-	/**
-	 * Nesting level of the output buffering mechanism
-	 *
-	 * @var	int
-	 */
 	protected $_ci_ob_level;
-
 	protected $_ci_view_paths = array(VIEWPATH => TRUE);
 	protected $_ci_library_paths = array(APPPATH, BASEPATH);
 	protected $_ci_model_paths = array(APPPATH);
@@ -48,18 +33,6 @@ class CI_Loader
 		log_message('info', 'Loader Class Initialized');
 	}
 
-
-	// --------------------------------------------------------------------
-
-	/**
-	 * Initializer
-	 *
-	 * @todo	Figure out a way to move this to the constructor
-	 *		without breaking *package_path*() methods.
-	 * @uses	CI_Loader::_ci_autoloader()
-	 * @used-by	CI_Controller::__construct()
-	 * @return	void
-	 */
 	public function initialize()
 	{
 		$this->_ci_autoloader();
