@@ -74,11 +74,11 @@ $active_group = 'default';
 $query_builder = TRUE;
 
 $db['default'] = array(
-	'dsn' => '',
-	'hostname' => '127.0.0.1',    // or 'localhost'
+	'dsn'	=> '',
+	'hostname' => '127.0.0.1',
 	'username' => 'root',
 	'password' => '',
-	'database' => 'tbtayo',       // change to your local DB name
+	'database' => 'news',  // ⬅️ Replace with your actual DB name
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
