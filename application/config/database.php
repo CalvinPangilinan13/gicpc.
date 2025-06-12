@@ -75,11 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn' => '',
-	'port' => '3307',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => 'root',
-	'database' => 'news',
+	'hostname' => 'sql208.infinityfree.com',   // replace with your actual host
+	'username' => 'if0_39196674',      // your InfinityFree username
+	'password' => 'ob3WsU8mEhqSYgl',      // your DB password
+	'database' => 'if0_39196674_news', // your actual DB name
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
