@@ -6,15 +6,19 @@ class Login_Model extends CI_Model
 	public function index($email, $password)
 	{
 		$data = array(
-			'email' => $email,
-			'password' => md5($password) // optional, if used in DB
+			'email' => trim($email),
+			'password' => trim($password)
 		);
-		$login = $this->db->get_where('tbladmin', $data);
 
-		if ($login->num_rows() > 0) {
-			return $login->row();
-		} else {
-			return NULL;
-		}
+		$query = $this->db->get_where('tbladmin', $data);
+		$result = $query->row();
+
+		// Debugging
+		echo '<pre>';
+		print_r($this->db->last_query());
+		print_r($result);
+		exit;
+
+		return $result;
 	}
 }
