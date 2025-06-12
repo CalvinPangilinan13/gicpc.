@@ -178,5 +178,6 @@
       });
    </script>
 </body>
+<?php include APPPATH . 'views/admin/include/footer.php'; ?>
 
 </html>

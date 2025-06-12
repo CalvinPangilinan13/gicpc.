@@ -163,5 +163,6 @@
    <script type="text/javascript" src="<?php echo base_url('assets/js/main.min.js'); ?>"></script>
    <script src="<?php echo base_url('assets/js/menu.min.js'); ?>"></script>
 </body>
+<?php include APPPATH . 'views/admin/include/footer.php'; ?>
 
 </html>

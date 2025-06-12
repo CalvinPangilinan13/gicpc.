@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://192.168.81.11:81/TBTayo/news/';
+$config['base_url'] = 'http://192.168.100.82:56480/TBTayo/news/';
 
 /*
 |--------------------------------------------------------------------------
