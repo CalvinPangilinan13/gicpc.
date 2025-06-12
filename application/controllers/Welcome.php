@@ -1,6 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
+#[\AllowDynamicProperties]  // ✅ Add this for PHP 8.2 compatibility
 class Welcome extends CI_Controller
 {
 	function __construct()
@@ -12,7 +13,6 @@ class Welcome extends CI_Controller
 
 	public function index()
 	{
-		//pagination settings
 		$config['base_url'] = site_url('welcome/index');
 		$config['total_rows'] = $this->db->count_all('tbladdnews');
 		$config['per_page'] = "3";
@@ -20,7 +20,7 @@ class Welcome extends CI_Controller
 		$choice = $config["total_rows"] / $config["per_page"];
 		$config["num_links"] = floor($choice);
 
-		//config for bootstrap pagination class integration
+		// Bootstrap pagination tags
 		$config['full_tag_open'] = '<ul class="pagination">';
 		$config['full_tag_close'] = '</ul>';
 		$config['first_link'] = false;
@@ -42,13 +42,9 @@ class Welcome extends CI_Controller
 
 		$this->pagination->initialize($config);
 
-
 		$page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
 
 		$data["links"] = $this->pagination->create_links();
-
-		//$data['student'] = $this->StudentPagination_Model->get_students($config["per_page"], $page);
-
 		$data['category'] = $this->Website_model->categoryList();
 		$data['resentlypost'] = $this->Website_model->resentlypost();
 		$data['viewdetails'] = $this->Website_model->getnewsubdetails($config["per_page"], $page);
@@ -78,16 +74,11 @@ class Welcome extends CI_Controller
 			$status = 0;
 
 			if ($name && $email && $comment && $postid) {
-				$this->load->model('Website_model');
 				$this->Website_model->commentsave($postid, $name, $email, $comment, $status);
-
-				// Redirect back to the post view after success
 				redirect(base_url('welcome/post/' . $postid . '?success=1'));
 			} else {
-				// Reload post.php with error message
-				$this->load->model('Website_model');
 				$data['error'] = 'Please fill in all fields.';
-				$data['viewdetails'] = $this->Website_model->getwebsitedetails($postid); // ✅ FIXED
+				$data['viewdetails'] = $this->Website_model->getwebsitedetails($postid);
 				$data['comment'] = $this->Website_model->getcomment($postid);
 				$this->load->view('post', $data);
 			}
