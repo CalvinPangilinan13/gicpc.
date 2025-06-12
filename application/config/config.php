@@ -23,7 +23,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'https://tbtayo.great-site.net/';
+$config['base_url'] = 'http://if0_39196674.infinityfreeapp.com/news/';  // ← replace with your actual domain from InfinityFree
 
 /*
 |--------------------------------------------------------------------------
