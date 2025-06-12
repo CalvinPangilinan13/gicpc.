@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn' => '',
-	'hostname' => 'sql208.infinityfree.com',   // replace with your actual host
-	'username' => 'if0_39196674',      // your InfinityFree username
-	'password' => 'ob3WsU8mEhqSYgl',      // your DB password
-	'database' => 'if0_39196674_news', // your actual DB name
+	'hostname' => '127.0.0.1',    // or 'localhost'
+	'username' => 'root',
+	'password' => '',
+	'database' => 'tbtayo',       // change to your local DB name
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
