@@ -11,5 +11,5 @@
     font-family: 'Helvetica Neue', sans-serif;
     z-index: 999;
 ">
-    © 2025 Tara Libot Tayo now na please lang — All rights reserved
+    © 2025 Tara Libot Tayo ! — All rights reserved
 </footer>

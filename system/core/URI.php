@@ -1,4 +1,5 @@
 <?php
+echo "<!-- LIVE URI -->";
 /**
  * CodeIgniter
  *
