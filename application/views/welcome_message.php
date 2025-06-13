@@ -147,7 +147,7 @@
                 </div>
 
                 <div class="card mb-4 shadow-sm">
-                    <div class="card-header bg-primary text-white">
+                    <div class="card-header text-white">
                         <i class="bi bi-list-ul me-2"></i> Categories
                     </div>
                     <div class="card-body">
@@ -172,7 +172,7 @@
                 </div>
 
                 <div class="card mb-4 shadow-sm">
-                    <div class="card-header bg-primary text-white">
+                    <div class="card-header text-white">
                         <i class="bi bi-newspaper me-2"></i> Recent Updates
                     </div>
                     <div class="card-body">

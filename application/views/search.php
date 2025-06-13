@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <style>
     .new-background {
-        background: #0074D9 !important;
+        background: #4E7145 !important;
     }
 </style>
 <html lang="en">
@@ -67,7 +67,7 @@
             <div class="col-lg-4">
                 <!-- Search widget-->
                 <div class="card mb-4 shadow-sm">
-                    <div class="card-header bg-primary text-white">
+                    <div class="card-header text-white">
                         <i class="bi bi-search me-2"></i> Search
                     </div>
                     <div class="card-body">
@@ -84,7 +84,7 @@
                 </div>
 
                 <div class="card mb-4 shadow-sm">
-                    <div class="card-header bg-primary text-white">
+                    <div class="card-header text-white">
                         <i class="bi bi-list-ul me-2"></i> Categories
                     </div>
                     <div class="card-body">
@@ -109,7 +109,7 @@
                 </div>
 
                 <div class="card mb-4 shadow-sm">
-                    <div class="card-header bg-primary text-white">
+                    <div class="card-header text-white">
                         <i class="bi bi-newspaper me-2"></i> Recent Updates
                     </div>
                     <div class="card-body">
