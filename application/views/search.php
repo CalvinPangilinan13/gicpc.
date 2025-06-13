@@ -7,7 +7,7 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>TBTayo!</title>
-    <link rel="icon" href="assets/images/lakbay.png" type="image/png">
+    <link rel="icon" href="assets/images/lakbay.png.png" type="image/png">
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Core theme CSS (includes Bootstrap)-->
