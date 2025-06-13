@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+
+<html lang="en">
 <style>
     .new-background {
         background: #4E7145 !important;
@@ -10,7 +12,6 @@
         font-weight: 600;
     }
 </style>
-<html lang="en">
 
 <head>
     <meta charset="utf-8" />
