@@ -85,6 +85,7 @@
 
     .navbar-toggler {
         border: none;
+        border-color: white;
     }
 
     .navbar-toggler:focus {
