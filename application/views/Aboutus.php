@@ -137,24 +137,24 @@
                     <div class="divider"></div>
 
                     <div class="about-section">
-                        <h5 class="section-title">📖 About Me</h5>
+                        <h5 class="section-title">📖 The Story</h5>
                         <p><?= nl2br($entry->content); ?></p>
                     </div>
 
                     <div class="about-section">
-                        <h5 class="section-title">🎯 My Vision</h5>
+                        <h5 class="section-title">🎯 Vision</h5>
                         <p><?= nl2br($entry->vision); ?></p>
                     </div>
 
                     <div class="about-section">
-                        <h5 class="section-title">🚀 My Mission</h5>
+                        <h5 class="section-title">🚀 Mission</h5>
                         <p><?= nl2br($entry->mission); ?></p>
                     </div>
 
                     <div class="divider"></div>
 
                     <div class="about-section">
-                        <h5 class="section-title">👤 Author Name</h5>
+                        <h5 class="section-title">👤 Your Ka-Akbay</h5>
                         <p><?= $entry->founder_name; ?> — <?= date('F d, Y', strtotime($entry->founded_date)); ?></p>
                     </div>
 
@@ -177,7 +177,7 @@
                     </div>
 
                     <div class="about-section social-links">
-                        <h5 class="section-title">🌐 Follow Me</h5>
+                        <h5 class="section-title">🌐 Social Media</h5>
                         <?php
                         $socials = json_decode($entry->social_links);
                         if (!empty($socials)) {
