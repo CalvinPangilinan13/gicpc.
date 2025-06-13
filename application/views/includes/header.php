@@ -105,7 +105,7 @@
     }
 </style>
 
-<nav class="navbar navbar-expand-lg navbar-light navbar-modern">
+<nav class="navbar navbar-expand-lg navbar-dark navbar-modern">
     <div class="container">
         <a class="navbar-brand" href="<?php echo site_url('Welcome'); ?>">
             <img src="<?php echo base_url('assets/images/head.png.png'); ?>" alt="Logo">
