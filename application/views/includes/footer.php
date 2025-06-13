@@ -1,7 +1,7 @@
 <style>
     .site-footer {
         background-color: #222;
-        color: #ccc;
+        color: #C4501B;
         padding: 2rem 1rem;
         font-family: 'Poppins', sans-serif;
         font-size: 15px;
