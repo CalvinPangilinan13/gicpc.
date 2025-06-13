@@ -42,6 +42,10 @@
             height: 250px;
             object-fit: cover;
         }
+
+        .btn-primary {
+            background-color: #4E7145 !important;
+        }
     </style>
 </head>
 
