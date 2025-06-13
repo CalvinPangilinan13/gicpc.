@@ -164,7 +164,7 @@
                     </div>
 
                     <div class="about-section">
-                        <h5 class="section-title">📬 Contact Email</h5>
+                        <h5 class="section-title">📧 Contact</h5>
                         <?php if (!empty($entry->contact_email)): ?>
                             <p>
                                 <a href="mailto:<?= htmlspecialchars($entry->contact_email); ?>" class="text-dark">
