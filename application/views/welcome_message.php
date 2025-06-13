@@ -130,7 +130,7 @@
 
             <aside class="col-lg-4">
                 <div class="card mb-4 shadow-sm">
-                    <div class="card-header bg-primary text-white">
+                    <div class="card-header text-white">
                         <i class="bi bi-search me-2"></i> Search
                     </div>
                     <div class="card-body">
