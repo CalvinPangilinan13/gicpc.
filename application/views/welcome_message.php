@@ -54,7 +54,7 @@
         }
 
         .card-header {
-            background-color: #0074D9;
+            background-color: #4E7145;
             color: white;
             font-weight: 600;
         }
