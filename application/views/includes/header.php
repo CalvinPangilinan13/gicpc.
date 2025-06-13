@@ -15,7 +15,7 @@
         z-index: 1030;
         background-color: #13341E;
         box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
-        padding: 0.8rem 1rem;
+        /* padding: 0.8rem 1rem; */
         transition: transform 0.3s ease-in-out;
         animation: slideDown 0.6s ease-out;
     }
