@@ -3,6 +3,12 @@
     .new-background {
         background: #4E7145 !important;
     }
+
+    .card-header {
+        background-color: #4E7145;
+        color: white;
+        font-weight: 600;
+    }
 </style>
 <html lang="en">
 
