@@ -15,7 +15,7 @@
         z-index: 1030;
         background-color: #13341E;
         box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
-        padding: 0.8rem 1rem;
+        padding: 0.5rem 1rem;
         transition: transform 0.3s ease-in-out;
         animation: slideDown 0.6s ease-out;
     }
@@ -108,7 +108,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark navbar-modern">
     <div class="container">
         <a class="navbar-brand" href="<?php echo site_url('Welcome'); ?>">
-            <img src="<?php echo base_url('assets/images/lakbay.png.png'); ?>" alt="Logo" style="height: 60px;">
+            <img src="<?php echo base_url('assets/images/lakbay.png.png'); ?>" alt="Logo" style="height: 80px;">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
