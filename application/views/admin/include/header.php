@@ -27,7 +27,7 @@ $currentTime = date('h:i A'); // e.g. 12:40 PM
 
                   <!-- Avatar -->
                   <span>
-                     <img class="img-circle" src="<?php echo base_url('assets/images/head.png.png'); ?>"
+                     <img class="img-circle" src="<?php echo base_url('assets/images/lakbay.png'); ?>"
                         style="width:40px;" alt="User Image">
                   </span>
 

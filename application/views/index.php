@@ -8,7 +8,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
    <!-- Favicon icon -->
    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
-   <link rel="icon" href="assets/images/head.png.png" type="images/head.png.png">
+   <link rel="icon" href="assets/images/lakbay.png" type="images/lakbay.png">
    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
 
    <!-- Google font-->
