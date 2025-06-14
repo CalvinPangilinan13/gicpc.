@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Tara Libot Tayo! Shop Coming Soon</title>
+    <title>Lakbay Shop Coming Soon</title>
     <link rel="icon" href="assets/images/lakbay.png.png" type="image/png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
@@ -74,7 +74,7 @@
 
     <div class="coming-soon-box">
         <img src="<?php echo base_url('assets/images/lakbay.png.png'); ?>" alt="Logo" class="shop-logo">
-        <h1>Tara Libot Tayo!</h1>
+        <h1>Lakbay</h1>
         <p class="lead">Our Shop is <strong>Coming Soon</strong>... Get Ready for the Adventure!</p>
     </div>
 

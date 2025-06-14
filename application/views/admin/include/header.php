@@ -6,7 +6,7 @@ $currentTime = date('h:i A'); // e.g. 12:40 PM
 
 
 <header class="main-header-top hidden-print">
-   <a href="<?= base_url('admin/dashboard'); ?>" class="logo">Tara Libot Tayo!</a>
+   <a href="<?= base_url('admin/dashboard'); ?>" class="logo">Lakbay</a>
    <nav class="navbar navbar-static-top">
       <!-- Sidebar toggle button-->
       <a href="#!" data-toggle="offcanvas" class="sidebar-toggle"></a>

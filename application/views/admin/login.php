@@ -68,7 +68,7 @@
 
   <div class="login-card">
     <div class="text-center login-header">
-      <h3 class="fw-bold text-primary">Tara Libot Tayo!</h3>
+      <h3 class="fw-bold text-primary">Lakbay</h3>
       <p class="text-muted">Sign in to your account</p>
     </div>
 

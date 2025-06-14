@@ -46,7 +46,7 @@
 <footer class="site-footer">
     <div class="container">
         <div class="footer-content">
-            <p class="brand">&copy; Tara Libot Tayo! <?php echo date('Y'); ?></p>
+            <p class="brand">&copy; Lakbay <?php echo date('Y'); ?></p>
             <p>All rights reserved.</p>
         </div>
     </div>
