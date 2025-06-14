@@ -66,9 +66,6 @@
         .btn-primary{
             background-color: #4E7145 !important;
         }
-        .bi-folder-fill{
-            background-color: #8A2B13 !important;
-        }
     </style>
 </head>
 
@@ -164,7 +161,7 @@
                                         <a href="<?php echo base_url("Category/index/{$row->id}"); ?>"
                                             class="text-decoration-none text-dark">
                                             <div class="border rounded p-2 d-flex align-items-center hover-shadow-sm">
-                                                <i class="bi bi-folder-fill me-2 text-primary"></i>
+                                                <i class="bi bi-folder-fill me-2 text-primary" style="color: #8A2B13;"></i>
                                                 <span><?php echo $row->name; ?></span>
                                             </div>
                                         </a>
