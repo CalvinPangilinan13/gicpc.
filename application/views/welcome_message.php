@@ -63,8 +63,13 @@
             height: 250px;
             object-fit: cover;
         }
-        .btn-primary{
+
+        .btn-primary {
             background-color: #4E7145 !important;
+        }
+
+        .custom-folder-icon {
+            color: #8A2B13;
         }
     </style>
 </head>
@@ -161,7 +166,8 @@
                                         <a href="<?php echo base_url("Category/index/{$row->id}"); ?>"
                                             class="text-decoration-none text-dark">
                                             <div class="border rounded p-2 d-flex align-items-center hover-shadow-sm">
-                                                <i class="bi bi-folder-fill me-2 text-primary" style="color: #8A2B13;"></i>
+                                                <i class="bi bi-folder-fill me-2 custom-folder-icon"
+                                                    style="color: #8A2B13;"></i>
                                                 <span><?php echo $row->name; ?></span>
                                             </div>
                                         </a>
