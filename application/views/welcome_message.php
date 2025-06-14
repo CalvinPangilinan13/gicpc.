@@ -66,6 +66,9 @@
         .btn-primary{
             background-color: #4E7145 !important;
         }
+        .bi-folder-fill{
+            background-color: #8A2B13 !important;
+        }
     </style>
 </head>
 
