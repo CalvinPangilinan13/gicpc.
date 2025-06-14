@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-   <title>TBTayo! | Admin Profile</title>
+   <title>Lakbay | Admin Profile</title>
    <link rel="icon" href="<?php echo base_url('assets/images/lakbay.png.png'); ?>" type="image/png">
    <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,500,700" rel="stylesheet">
    <link rel="stylesheet" href="<?php echo base_url('assets/icon/simple-line-icons/css/simple-line-icons.css') ?>">

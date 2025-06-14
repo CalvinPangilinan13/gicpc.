@@ -4,7 +4,7 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>TBTayo! | Dashboard</title>
+   <title>Lakbay | Dashboard</title>
    <link rel="icon" href="<?php echo base_url('assets/images/lakbay.png.png'); ?>" type="image/png">
 
    <!-- Fonts & Icons -->

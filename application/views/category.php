@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <title>TBTayo! | Category View</title>
+    <title>Lakbay | Category View</title>
     <link rel="icon" type="image/png" href="assets/favicon.ico" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
@@ -54,8 +54,8 @@
 
     <header class="main-header">
         <div class="container">
-            <h1>TBTayo!</h1>
-            <p>Category Specific Posts</p>
+            <h1>Lakbay</h1>
+            <p>Tara, Libot Tayo!</p>
         </div>
     </header>
 

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TBTayo! | Adventures and Stories</title>
+    <title>Lakbay | Adventures and Stories</title>
     <link rel="icon" href="assets/images/lakbay.png.png" type="image/png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
@@ -74,8 +74,8 @@
 
     <header class="main-header">
         <div class="container">
-            <h1>TBTayo!</h1>
-            <p>Your formal source of adventures and stories</p>
+            <h1>Lakbay</h1>
+            <p>Tara, Libot Tayo!</p>
         </div>
     </header>
 
