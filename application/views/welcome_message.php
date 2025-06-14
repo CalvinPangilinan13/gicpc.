@@ -69,7 +69,7 @@
         }
 
         .custom-folder-icon {
-            color: #8A2B13;
+            color: #EB9C35;
         }
     </style>
 </head>
@@ -167,7 +167,7 @@
                                             class="text-decoration-none text-dark">
                                             <div class="border rounded p-2 d-flex align-items-center hover-shadow-sm">
                                                 <i class="bi bi-folder-fill me-2 custom-folder-icon"
-                                                    style="color: #8A2B13;"></i>
+                                                    style="color: #EB9C35;"></i>
                                                 <span><?php echo $row->name; ?></span>
                                             </div>
                                         </a>
